@@ -24,7 +24,7 @@ export const RoomCarouselSection = () => {
       {/* Background Image with Heavy Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/src/assets/images/Requirements.png" 
+          src="/Requirements.png" 
           alt="" 
           className="w-full h-full object-cover"
         />

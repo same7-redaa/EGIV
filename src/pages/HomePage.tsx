@@ -53,7 +53,7 @@ export const HomePage = () => {
           
           {/* Background image for cards section */}
           <div className="absolute inset-0 w-full h-full z-0 opacity-50">
-            <img src="/src/assets/images/bg image 2.png" alt="" className="w-full h-full object-cover" />
+            <img src="/bg image 2.png" alt="" className="w-full h-full object-cover" />
           </div>
           
           <div className="container mx-auto max-w-[1600px] px-4 md:px-12 relative z-10">

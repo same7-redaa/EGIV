@@ -24,7 +24,7 @@ export const AboutUsPage = () => {
 
       {/* Hero Background Image */}
       <div className="absolute inset-0 w-full h-screen z-0">
-        <img src="/src/assets/images/about-hero-bg.png" alt="" className="w-full h-full object-cover" />
+        <img src="/about-hero-bg.png" alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black via-black/50 to-transparent z-[1]"></div>
         <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-[#1D2334] z-[1]"></div>
@@ -47,7 +47,7 @@ export const AboutUsPage = () => {
       </section>
 
       {/* Content wrapper with background image */}
-      <div className="relative bg-cover bg-center bg-no-repeat -mt-[150px]" style={{backgroundImage: 'url("/src/assets/images/about-valhalla.png")'}}>
+      <div className="relative bg-cover bg-center bg-no-repeat -mt-[150px]" style={{backgroundImage: 'url("/about-valhalla.png")'}}>
         
         {/* Optional dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/40 pointer-events-none"></div>
@@ -71,7 +71,7 @@ export const AboutUsPage = () => {
               <div className="flex-shrink-0">
                 <div className="w-28 h-28 bg-gray-700/40 backdrop-blur-md rounded-2xl flex items-center justify-center p-5 border border-gray-600/50 shadow-lg">
                   <img 
-                    src="/src/assets/images/vision-vr.png" 
+                    src="/vision-vr.png" 
                     alt="VR Vision" 
                     className="w-full h-full object-contain"
                   />
@@ -92,7 +92,7 @@ export const AboutUsPage = () => {
               <div className="flex-shrink-0">
                 <div className="w-28 h-28 bg-gray-700/40 backdrop-blur-md rounded-2xl flex items-center justify-center p-5 border border-gray-600/50 shadow-lg">
                   <img 
-                    src="/src/assets/images/mission-target.png" 
+                    src="/mission-target.png" 
                     alt="Mission Target" 
                     className="w-full h-full object-contain"
                   />

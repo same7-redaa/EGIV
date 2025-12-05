@@ -67,7 +67,7 @@ export const AIRoomDesignSection = () => {
                   <div className="absolute -inset-1 bg-gradient-to-br from-purple-500/30 via-pink-500/30 to-red-500/30 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
                   <div className="relative h-[500px] md:h-[650px] overflow-hidden rounded-2xl border-2 border-purple-500/50 shadow-2xl">
                     <img 
-                      src="/src/assets/images/Rectangle 23.png" 
+                      src="/Rectangle 23.png" 
                       alt="Gaming Room Setup"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
@@ -95,7 +95,7 @@ export const AIRoomDesignSection = () => {
                   <div className="absolute -inset-1 bg-gradient-to-br from-teal-500/30 via-cyan-500/30 to-blue-500/30 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-500"></div>
                   <div className="relative h-[500px] md:h-[650px] overflow-hidden rounded-2xl border-2 border-[#3DB8A5]/50 shadow-2xl">
                     <img 
-                      src="/src/assets/images/Rectangle 27.png" 
+                      src="/Rectangle 27.png" 
                       alt="Workspace Setup"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />

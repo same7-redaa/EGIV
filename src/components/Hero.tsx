@@ -6,7 +6,7 @@ export const Hero = () => {
     <section className="relative w-full flex flex-col items-center justify-center pt-32 pb-16 min-h-screen">
         {/* Hero Background with liner.svg */}
         <div className="absolute inset-0 w-full h-full z-0">
-          <img src="/src/assets/images/liner.svg" alt="" className="w-full h-full object-cover" />
+          <img src="/liner.svg" alt="" className="w-full h-full object-cover" />
         </div>
         {/* Gradient at bottom to blend with cards section */}
         <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-b from-transparent to-black z-[1]"></div>

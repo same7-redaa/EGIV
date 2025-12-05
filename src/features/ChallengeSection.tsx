@@ -26,7 +26,7 @@ export const ChallengeSection = () => {
           <div className="relative">
             {/* Line Image */}
             <div className="absolute -right-16 top-0 h-full">
-              <img src="/src/assets/images/line.png" alt="" className="h-full w-auto object-contain" />
+              <img src="/line.png" alt="" className="h-full w-auto object-contain" />
             </div>
 
             {/* Feature Items */}
@@ -82,7 +82,7 @@ export const ChallengeSection = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent z-10"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-transparent z-10"></div>
           <img 
-            src="/src/assets/images/Rectangle 27.png" 
+            src="/Rectangle 27.png" 
             alt="Gaming Setup" 
             className="w-full h-full object-cover"
           />

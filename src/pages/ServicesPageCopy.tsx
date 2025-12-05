@@ -195,7 +195,7 @@ export const ServicesPageCopy = () => {
               <div className="md:col-span-4">
                 <div className="relative rounded-xl border border-gray-700 overflow-hidden">
                   <img 
-                    src="/src/assets/images/Rectangle 23.png" 
+                    src="/Rectangle 23.png" 
                     alt="Room"
                     className="w-full h-80 object-cover"
                   />
