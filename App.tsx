@@ -1,76 +1,67 @@
-import React, { useState, useEffect } from 'react';
-import { Sidebar } from './src/components/Sidebar';
-import { Navbar } from './src/components/Navbar';
-import { Hero } from './src/components/Hero';
-import { FilterBar } from './src/components/FilterBar';
-import { AnimatedCard } from './src/components/AnimatedCard';
-import { ChallengeSection } from './src/features/ChallengeSection';
-import { RoomCarouselSection } from './src/features/RoomCarouselSection';
-import { AIRoomDesignSection } from './src/features/AIRoomDesignSection';
-import { CARDS_DATA } from './src/constants';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { PageTransition } from './src/components/PageTransition';
+import { SplashScreen } from './src/pages/SplashScreen';
+import { HomePage } from './src/pages/HomePage';
+import { AboutUsPage } from './src/pages/AboutUsPage';
+import { ServicesPage } from './src/pages/ServicesPage';
+import { ServicesPageCopy } from './src/pages/ServicesPageCopy';
+import { BookingStep2 } from './src/pages/BookingStep2';
+import { BookingStep3 } from './src/pages/BookingStep3';
+import { BookingConfirmation } from './src/pages/BookingConfirmation';
+import { BookingDetails } from './src/pages/BookingDetails';
+import { MyBookings } from './src/pages/MyBookings';
+import { SharedRoomBooking } from './src/pages/SharedRoomBooking';
+import { SharedBookingConfirmation } from './src/pages/SharedBookingConfirmation';
+import { ConsultationBooking } from './src/pages/ConsultationBooking';
+import { ProjectsPage } from './src/pages/ProjectsPage';
+import { FurnitureViewerPage } from './src/pages/FurnitureViewerPage';
+import { BlogPage } from './src/pages/BlogPage';
+import { LoginPage } from './src/pages/LoginPage';
+import { RegisterPage } from './src/pages/RegisterPage';
+import { OTPVerificationPage } from './src/pages/OTPVerificationPage';
+import { AccountSettingsPage } from './src/pages/AccountSettingsPage';
 
-function App() {
-  const [mounted, setMounted] = useState(false);
+// Component to scroll to top on route change
+const ScrollToTop = () => {
+  const location = useLocation();
   
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
+  return null;
+};
 
+function App() {
   return (
-    <div className={`min-h-screen bg-deep-dark text-white font-cairo relative overflow-x-hidden ${mounted ? 'opacity-100' : 'opacity-0'} transition-opacity duration-700`}>
-      
-      {/* Background Pattern Layer */}
-      <div className="fixed inset-0 pointer-events-none opacity-5 bg-hero-pattern z-0"></div>
-
-      {/* Top Navigation */}
-      <Navbar />
-
-      {/* Left Sidebar (Icons) */}
-      <Sidebar />
-
-      {/* Main Content Area */}
-      <main className="w-full min-h-screen pb-20 relative z-10">
-        
-        <Hero />
-
-        {/* Filter Bar */}
-        <div className="container mx-auto max-w-7xl relative z-10">
-            <FilterBar />
-        </div>
-
-        {/* Cards Grid */}
-        <section className="relative w-full py-12 bg-black">
-          {/* Gradient at top to blend with hero section */}
-          <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black to-transparent z-[1]"></div>
-          
-          {/* Gradient at bottom to blend with next section */}
-          <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-black to-transparent z-[1]"></div>
-          
-          {/* Background image for cards section */}
-          <div className="absolute inset-0 w-full h-full z-0 opacity-50">
-            <img src="/src/assets/images/bg image 2.png" alt="" className="w-full h-full object-cover" />
-          </div>
-          
-          <div className="container mx-auto max-w-[1600px] px-4 md:px-12 relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {CARDS_DATA.map((card, index) => (
-                <AnimatedCard key={card.id} data={card} index={index} />
-              ))}
-          </div>
-          </div>
-        </section>
-
-        {/* Face the Challenge Section */}
-        <ChallengeSection />
-
-        {/* Room Carousel Section */}
-        <RoomCarouselSection />
-
-        {/* AI Room Design Section */}
-        <AIRoomDesignSection />
-
-      </main>
-    </div>
+    <Router>
+      <ScrollToTop />
+      <PageTransition>
+        <Routes>
+          <Route path="/" element={<SplashScreen />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/about" element={<AboutUsPage />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/booking" element={<ServicesPageCopy />} />
+          <Route path="/booking-step2" element={<BookingStep2 />} />
+          <Route path="/booking-step3" element={<BookingStep3 />} />
+          <Route path="/booking-confirmation" element={<BookingConfirmation />} />
+          <Route path="/booking-details" element={<BookingDetails />} />
+          <Route path="/my-bookings" element={<MyBookings />} />
+          <Route path="/shared-room-booking" element={<SharedRoomBooking />} />
+          <Route path="/shared-booking-confirmation" element={<SharedBookingConfirmation />} />
+          <Route path="/consultation-booking" element={<ConsultationBooking />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/furniture-viewer" element={<FurnitureViewerPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/otp-verification" element={<OTPVerificationPage />} />
+          <Route path="/account-settings" element={<AccountSettingsPage />} />
+        </Routes>
+      </PageTransition>
+    </Router>
   );
 }
 

@@ -2,10 +2,10 @@ import React from 'react';
 import { BookingCardProps, NavLink } from './types';
 
 export const NAV_LINKS: NavLink[] = [
-  { label: 'الرئيسية', href: '#' },
-  { label: 'الخدمات', href: '#' },
-  { label: 'من نحن', href: '#' },
-  { label: 'المدونة', href: '#' },
+  { label: 'الرئيسية', href: '/home' },
+  { label: 'من نحن', href: '/about' },
+  { label: 'الخدمات', href: '/services' },
+  { label: 'المدونة', href: '/blog' },
 ];
 
 export const CARDS_DATA: BookingCardProps[] = [
