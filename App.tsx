@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { PageTransition } from './src/components/PageTransition';
-import { SplashScreen } from './src/pages/SplashScreen';
 import { HomePage } from './src/pages/HomePage';
 import { AboutUsPage } from './src/pages/AboutUsPage';
 import { ServicesPage } from './src/pages/ServicesPage';
@@ -39,7 +38,7 @@ function App() {
       <ScrollToTop />
       <PageTransition>
         <Routes>
-          <Route path="/" element={<SplashScreen />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/about" element={<AboutUsPage />} />
           <Route path="/services" element={<ServicesPage />} />

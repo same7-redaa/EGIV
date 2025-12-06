@@ -5,16 +5,12 @@ import { Sidebar } from '../components/Sidebar';
 import { Footer } from '../components/Footer';
 
 export const SharedRoomBooking = () => {
-  const [isLoading, setIsLoading] = useState(false);
   const [playerCount, setPlayerCount] = useState(4);
   const [selectedDate, setSelectedDate] = useState(23);
   const navigate = useNavigate();
 
   const handleNext = () => {
-    setIsLoading(true);
-    setTimeout(() => {
-      navigate('/booking-step2?source=shared');
-    }, 2000);
+    navigate('/booking-step2?source=shared');
   };
 
   const incrementPlayers = () => setPlayerCount(playerCount + 1);
@@ -25,15 +21,6 @@ export const SharedRoomBooking = () => {
 
   return (
     <div className="min-h-screen bg-[#1D2334] text-white relative overflow-hidden" dir="rtl">
-      
-      {/* Loading Overlay with Logo */}
-      {isLoading && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center" style={{backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>
-          <div className="animate-bounce">
-            <img src="/logo.png" alt="Logo" className="w-48 h-48 object-contain" style={{animation: 'bounce 1s infinite'}} />
-          </div>
-        </div>
-      )}
       
       {/* Background Images with Overlay */}
       <div className="absolute inset-0 z-0">
@@ -98,13 +85,58 @@ export const SharedRoomBooking = () => {
         <div className="container mx-auto max-w-5xl">
           
           {/* Page Header */}
-          <div className="text-center mb-12 mt-32">
-            <h1 className="text-4xl font-bold text-white mb-4 font-blue-ocean">
+          <div className="text-center mb-8 mt-16 md:mt-32">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 font-blue-ocean">
               احجز غرفتك المشتركة اليوم
             </h1>
-            <p className="text-gray-400 text-lg mb-8">
+            <p className="text-gray-400 text-sm md:text-lg mb-8">
               اختر التاريخ والوقت المناسب واستمتع بتجربة مميزة
             </p>
+          </div>
+
+          {/* The Stepper */}
+          <div className="flex items-center justify-center mb-8 md:mb-12 relative px-4">
+            
+            {/* Steps */}
+            <div className="flex items-center gap-12 sm:gap-16 md:gap-24 lg:gap-32 relative z-10">
+              {/* Step 1 - معلومات الحجز (الخطوة الحالية) */}
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 border-2 border-cyan-400 flex items-center justify-center shadow-lg shadow-cyan-500/50 animate-pulse">
+                  <i className="fas fa-calendar-alt text-white text-sm sm:text-base md:text-lg lg:text-xl"></i>
+                </div>
+                <span className="text-cyan-400 text-[10px] sm:text-xs font-medium hidden sm:block">معلومات الحجز</span>
+              </div>
+              
+              {/* Dots between Step 1 and 2 */}
+              <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2">
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-gray-600"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-gray-600"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-gray-600"></div>
+              </div>
+              
+              {/* Step 2 - الدفع (قادمة) */}
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gray-800 border-2 border-gray-600 flex items-center justify-center">
+                  <i className="fas fa-credit-card text-gray-500 text-sm sm:text-base md:text-lg lg:text-xl"></i>
+                </div>
+                <span className="text-gray-500 text-[10px] sm:text-xs font-medium hidden sm:block">الدفع</span>
+              </div>
+              
+              {/* Dots between Step 2 and 3 */}
+              <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2">
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-gray-600"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-gray-600"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-gray-600"></div>
+              </div>
+              
+              {/* Step 3 - التأكيد (قادمة) */}
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gray-800 border-2 border-gray-600 flex items-center justify-center">
+                  <i className="fas fa-check-circle text-gray-500 text-sm sm:text-base md:text-lg lg:text-xl"></i>
+                </div>
+                <span className="text-gray-500 text-[10px] sm:text-xs font-medium hidden sm:block">التأكيد</span>
+              </div>
+            </div>
           </div>
 
           {/* Main Card Container */}

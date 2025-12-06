@@ -83,7 +83,7 @@ export const ProjectsPage = () => {
           {/* Page Header */}
           <ScrollReveal direction="up">
             <div className="text-center mb-12 mt-24">
-              <h1 className="text-5xl font-bold text-white mb-4 font-blue-ocean">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-blue-ocean">
                 تصميم غرفتك بالذكاء الاصطناعي
               </h1>
               <p className="text-gray-400 text-lg font-cairo">

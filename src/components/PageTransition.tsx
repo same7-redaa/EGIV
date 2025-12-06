@@ -11,15 +11,8 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
 
   // Pages that should skip the transition (they have their own loading)
   const skipTransition = [
-    '/booking',
-    '/booking-step2',
-    '/booking-step3',
-    '/booking-confirmation',
-    '/booking-details',
-    '/my-bookings',
-    '/shared-room-booking',
-    '/shared-booking-confirmation',
-    '/consultation-booking'
+    '/',
+    '/home'
   ];
 
   const shouldShowTransition = !skipTransition.includes(location.pathname);
@@ -27,18 +20,26 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
   useEffect(() => {
     if (!shouldShowTransition) {
       setIsLoading(false);
+      document.body.style.overflow = 'auto';
       return;
     }
 
     // Show loading on route change
     setIsLoading(true);
     
+    // Prevent scrolling when loading
+    document.body.style.overflow = 'hidden';
+    
     // Hide loading after animation
     const timer = setTimeout(() => {
       setIsLoading(false);
+      document.body.style.overflow = 'auto';
     }, 1500);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflow = 'auto';
+    };
   }, [location.pathname, shouldShowTransition]);
 
   return (
@@ -46,18 +47,29 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
       {/* Loading Overlay with Blur and Bouncing Logo */}
       {isLoading && shouldShowTransition && (
         <div 
-          className="fixed inset-0 z-[9999] flex items-center justify-center transition-all duration-500"
+          className="fixed z-[9999] flex items-center justify-center"
           style={{
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
-            backgroundColor: 'rgba(29, 35, 52, 0.7)'
+            backgroundColor: 'rgba(29, 35, 52, 0.9)',
+            height: '100vh',
+            minHeight: '100vh',
+            width: '100vw',
+            position: 'fixed',
+            overflow: 'hidden',
+            margin: 0,
+            padding: 0
           }}
         >
           <div className="animate-bounce">
             <img 
               src="https://i.postimg.cc/BvDpzfrJ/098-1.png" 
               alt="EGIV Logo" 
-              className="w-64 h-auto object-contain animate-pulse"
+              className="w-40 h-auto md:w-56 lg:w-64 object-contain animate-pulse"
             />
           </div>
         </div>

@@ -14,10 +14,10 @@ export const ChallengeSection = () => {
         }`}>
           {/* Header */}
           <div className="mb-12">
-            <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-3 font-blue-ocean">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-3 font-blue-ocean">
               واجه التحدي
             </h2>
-            <p className="text-xl text-gray-400 font-medium">
+            <p className="text-lg sm:text-xl text-gray-400 font-medium">
               أثبت مهارتك
             </p>
           </div>
@@ -25,7 +25,7 @@ export const ChallengeSection = () => {
           {/* Timeline Feature List */}
           <div className="relative">
             {/* Line Image */}
-            <div className="absolute -right-16 top-0 h-full">
+            <div className="absolute -right-24 md:-right-16 top-0 h-full">
               <img src="/line.png" alt="" className="h-full w-auto object-contain" />
             </div>
 

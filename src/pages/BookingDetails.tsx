@@ -1,22 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Navbar } from '../components/Navbar';
 import { Sidebar } from '../components/Sidebar';
 import { Footer } from '../components/Footer';
 
 export const BookingDetails = () => {
-  const [showContent, setShowContent] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      setShowContent(true);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleDownloadCode = () => {
     // Simulate download or navigate
@@ -100,32 +89,67 @@ export const BookingDetails = () => {
       {/* Left Sidebar */}
       <Sidebar />
 
-      {/* Loading Overlay with Logo */}
-      {isLoading && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center" style={{backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>
-          <div className="animate-bounce">
-            <img src="/logo.png" alt="Logo" className="w-48 h-48 object-contain" style={{animation: 'bounce 1s infinite'}} />
-          </div>
-        </div>
-      )}
-
       {/* Booking Details Content */}
       <section className="relative z-10 pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-4xl">
           
           {/* Page Header */}
-          <div className="text-center mb-12 mt-32">
-            <h1 className="text-4xl font-bold text-white mb-4 font-blue-ocean">
+          <div className="text-center mb-8 mt-16 md:mt-32">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 font-blue-ocean">
               تفاصيل حجز
             </h1>
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-400 text-sm md:text-lg">
               تابع كل حجوزاتك هنا بكل سهولة وعرف حالة كل حجز وتفاصيله بسرعة.
             </p>
           </div>
 
-          {showContent && (
-            /* Main Receipt Card */
-            <div className="bg-[#0a0a0a] border border-cyan-500/30 rounded-3xl p-8 animate-fade-in">
+          {/* The Stepper */}
+          <div className="flex items-center justify-center mb-8 md:mb-12 relative px-4">
+            
+            {/* Steps */}
+            <div className="flex items-center gap-12 sm:gap-16 md:gap-24 lg:gap-32 relative z-10">
+              {/* Step 1 - معلومات الحجز (مكتملة) */}
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 border-2 border-green-400 flex items-center justify-center shadow-lg shadow-green-500/50">
+                  <i className="fas fa-check text-white text-sm sm:text-base md:text-lg lg:text-xl"></i>
+                </div>
+                <span className="text-green-400 text-[10px] sm:text-xs font-medium hidden sm:block">معلومات الحجز</span>
+              </div>
+              
+              {/* Dots between Step 1 and 2 - Green (completed) */}
+              <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2">
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
+              </div>
+              
+              {/* Step 2 - الدفع (مكتملة) */}
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 border-2 border-green-400 flex items-center justify-center shadow-lg shadow-green-500/50">
+                  <i className="fas fa-check text-white text-sm sm:text-base md:text-lg lg:text-xl"></i>
+                </div>
+                <span className="text-green-400 text-[10px] sm:text-xs font-medium hidden sm:block">الدفع</span>
+              </div>
+              
+              {/* Dots between Step 2 and 3 - Green (completed) */}
+              <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2">
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
+              </div>
+              
+              {/* Step 3 - التأكيد (مكتملة) */}
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 border-2 border-green-400 flex items-center justify-center shadow-lg shadow-green-500/50">
+                  <i className="fas fa-check-circle text-white text-sm sm:text-base md:text-lg lg:text-xl"></i>
+                </div>
+                <span className="text-green-400 text-[10px] sm:text-xs font-medium hidden sm:block">التأكيد</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Main Receipt Card */}
+          <div className="bg-[#0a0a0a] border border-cyan-500/30 rounded-3xl p-8 animate-fade-in">
               
               {/* Upper Section: Booking Info (Dark Area) */}
               <div className="flex flex-col md:flex-row gap-8 mb-6">
@@ -239,7 +263,6 @@ export const BookingDetails = () => {
               </div>
 
             </div>
-          )}
 
         </div>
       </section>

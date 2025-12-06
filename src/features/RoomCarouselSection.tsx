@@ -40,24 +40,24 @@ export const RoomCarouselSection = () => {
         
         {/* Header */}
         <div className="text-center mb-24">
-          <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-4 font-blue-ocean">
-            ما نوع الغرفة الي تبيها؟
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white mb-4 font-blue-ocean">
+            ما نوع الغرفة الي تبيها ؟
           </h2>
-          <p className="text-xl text-gray-400 font-medium">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 font-medium">
             نسعى الى مستقبل ذكي في الغرف
           </p>
         </div>
 
         {/* 3D Carousel */}
-        <div className="relative h-[700px] flex items-center justify-center mb-12 mt-16">
+        <div className="relative h-[400px] md:h-[700px] flex items-center justify-center mb-12 mt-16">
           
           {/* Previous Button */}
           <button 
             onClick={prevSlide}
-            className="absolute left-8 z-20 text-white hover:text-neon-cyan transition-colors p-4"
+            className="absolute left-2 md:left-8 z-20 text-white hover:text-neon-cyan transition-colors p-2 md:p-4"
             aria-label="Previous"
           >
-            <i className="fa-solid fa-chevron-left text-3xl"></i>
+            <i className="fa-solid fa-chevron-left text-xl md:text-3xl"></i>
           </button>
 
           {/* Carousel Container */}
@@ -92,7 +92,7 @@ export const RoomCarouselSection = () => {
               return (
                 <div
                   key={room.id}
-                  className="absolute w-[450px] h-[600px] transition-all duration-700 ease-out cursor-pointer"
+                  className="absolute w-[280px] h-[380px] md:w-[450px] md:h-[600px] transition-all duration-700 ease-out cursor-pointer"
                   style={{
                     transform,
                     zIndex,
@@ -115,10 +115,10 @@ export const RoomCarouselSection = () => {
           {/* Next Button */}
           <button 
             onClick={nextSlide}
-            className="absolute right-8 z-20 text-white hover:text-neon-cyan transition-colors p-4"
+            className="absolute right-2 md:right-8 z-20 text-white hover:text-neon-cyan transition-colors p-2 md:p-4"
             aria-label="Next"
           >
-            <i className="fa-solid fa-chevron-right text-3xl"></i>
+            <i className="fa-solid fa-chevron-right text-xl md:text-3xl"></i>
           </button>
         </div>
 
@@ -139,8 +139,8 @@ export const RoomCarouselSection = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center">
-          <button className="px-24 py-4 border-2 border-[#3DB8A5] text-white rounded-[5px] font-bold hover:bg-[#3DB8A5] hover:text-black transition-all duration-300 text-lg backdrop-blur-md bg-white/5 min-w-[400px]">
+        <div className="text-center px-4">
+          <button className="w-full max-w-[400px] px-8 md:px-24 py-3 md:py-4 border-2 border-[#3DB8A5] text-white rounded-[5px] font-bold hover:bg-[#3DB8A5] hover:text-black transition-all duration-300 text-base md:text-lg backdrop-blur-md bg-white/5">
             احجز غرفتك
           </button>
         </div>

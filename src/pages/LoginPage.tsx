@@ -11,8 +11,9 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    // Handle login logic here
     console.log('Login with:', phoneNumber, password);
+    // Navigate to home page after successful login
+    navigate('/');
   };
 
   const handleCreateAccount = () => {
@@ -88,7 +89,7 @@ export const LoginPage = () => {
           {/* Page Header */}
           <ScrollReveal direction="up">
             <div className="text-center mb-12 mt-32">
-              <h1 className="text-5xl font-bold text-white mb-4 font-blue-ocean">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-blue-ocean">
                 تسجيل الدخول
               </h1>
               <p className="text-gray-400 text-xl font-cairo">

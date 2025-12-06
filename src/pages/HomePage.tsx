@@ -30,7 +30,7 @@ export const HomePage = () => {
       <Sidebar />
 
       {/* Main Content Area */}
-      <main className="w-full min-h-screen pb-20 relative z-10">
+      <main className="w-full min-h-screen pb-20 md:pb-20 relative z-10">
         
         <Hero />
 

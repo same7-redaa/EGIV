@@ -15,6 +15,10 @@ export const BookingStep3 = () => {
   const source = searchParams.get('source');
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     let animationInstance = null;
     
     // Load Lottie animation for done icon
@@ -220,61 +224,76 @@ export const BookingStep3 = () => {
         <div className="container mx-auto max-w-5xl">
           
           {/* 1. Component Header */}
-          <div className="text-center mb-12 mt-32">
-            <h1 className="text-4xl font-bold text-white mb-4 font-blue-ocean">
+          <div className="text-center mb-8 md:mb-12 mt-16 md:mt-32 px-4">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4 font-blue-ocean">
               تم تأكيد حجزك!
             </h1>
-            <p className="text-gray-400 text-lg mb-8">
+            <p className="text-gray-400 text-sm sm:text-base md:text-lg mb-6 md:mb-8">
               شكراً لحجزكم معنا نتطلع لاستضافتكم ونتمني لكم تجربة ممتعة ومميزة
             </p>
           </div>
 
           {/* 2. The Stepper */}
-          <div className="flex items-center justify-center mb-12 relative">
-            {/* Connector Line */}
-            <div className="absolute h-0.5 bg-gray-700 w-64" style={{top: '50%', transform: 'translateY(-50%)'}}></div>
+          <div className="flex items-center justify-center mb-8 md:mb-12 relative px-4">
             
             {/* Steps */}
-            <div className="flex items-center gap-32 relative z-10">
-              {/* Step 1 */}
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-gray-800 border-2 border-cyan-500 flex items-center justify-center">
-                  <i className="fas fa-grip-horizontal text-white text-xl"></i>
+            <div className="flex items-center gap-12 sm:gap-16 md:gap-24 lg:gap-32 relative z-10">
+              {/* Step 1 - معلومات الحجز (مكتملة) */}
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 border-2 border-green-400 flex items-center justify-center shadow-lg shadow-green-500/50">
+                  <i className="fas fa-check text-white text-sm sm:text-base md:text-lg lg:text-xl"></i>
                 </div>
+                <span className="text-green-400 text-[10px] sm:text-xs font-medium hidden sm:block">معلومات الحجز</span>
               </div>
               
-              {/* Step 2 */}
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-gray-800 border-2 border-cyan-500 flex items-center justify-center">
-                  <i className="fas fa-credit-card text-white text-xl"></i>
-                </div>
+              {/* Dots between Step 1 and 2 - Green (completed) */}
+              <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2">
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
               </div>
               
-              {/* Step 3 */}
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-gray-800 border-2 border-cyan-500 flex items-center justify-center">
-                  <i className="fas fa-calendar text-white text-xl"></i>
+              {/* Step 2 - الدفع (مكتملة) */}
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 border-2 border-green-400 flex items-center justify-center shadow-lg shadow-green-500/50">
+                  <i className="fas fa-check text-white text-sm sm:text-base md:text-lg lg:text-xl"></i>
                 </div>
+                <span className="text-green-400 text-[10px] sm:text-xs font-medium hidden sm:block">الدفع</span>
+              </div>
+              
+              {/* Dots between Step 2 and 3 - Green (completed) */}
+              <div className="flex items-center gap-1 sm:gap-1.5 md:gap-2">
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
+                <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 md:w-2 md:h-2 rounded-full bg-green-500"></div>
+              </div>
+              
+              {/* Step 3 - التأكيد (الخطوة الحالية - مكتملة) */}
+              <div className="flex flex-col items-center gap-2">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-green-500 to-green-600 border-2 border-green-400 flex items-center justify-center shadow-lg shadow-green-500/50 animate-pulse">
+                  <i className="fas fa-check-circle text-white text-sm sm:text-base md:text-lg lg:text-xl"></i>
+                </div>
+                <span className="text-green-400 text-[10px] sm:text-xs font-medium hidden sm:block">التأكيد</span>
               </div>
             </div>
           </div>
 
           {/* 3. Main QR Code Card */}
-          <div className="bg-[#0a0a0a] border border-cyan-500/30 rounded-3xl p-12">
+          <div className="bg-[#0a0a0a] border border-cyan-500/30 rounded-2xl md:rounded-3xl p-6 md:p-12">
             
             {!showQR ? (
               <>
-                <div className="flex flex-col items-center mb-8">
-                  <div ref={lottieContainer} className="w-64 h-64 mb-4"></div>
+                <div className="flex flex-col items-center mb-6 md:mb-8">
+                  <div ref={lottieContainer} className="w-48 h-48 md:w-64 md:h-64 mb-4"></div>
                   {showSuccessText && (
-                    <p className="text-white text-xl font-bold animate-fade-in">تم الدفع بنجاح</p>
+                    <p className="text-white text-lg md:text-xl font-bold animate-fade-in">تم الدفع بنجاح</p>
                   )}
                 </div>
               </>
             ) : (
               <>
-                <div className="text-center mb-8 animate-fade-in">
-                  <p className="text-white text-xl">
+                <div className="text-center mb-6 md:mb-8 animate-fade-in px-4">
+                  <p className="text-white text-base md:text-xl">
                     هذا هو كود الدخول الخاص بحجزك، اعرضه عند الوصول للفرع
                   </p>
                 </div>

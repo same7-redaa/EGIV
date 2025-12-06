@@ -118,7 +118,7 @@ export const ServicesPage = () => {
           {/* Title & Subtitle */}
           <ScrollReveal direction="up">
             <div className="text-center mb-12 mt-32">
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 font-blue-ocean">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 font-blue-ocean">
                 خدماتنا
               </h1>
               <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto">
