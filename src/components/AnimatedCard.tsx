@@ -18,3 +18,4 @@ export const AnimatedCard: React.FC<{ data: BookingCardProps; index: number }> =
     </div>
   );
 };
+

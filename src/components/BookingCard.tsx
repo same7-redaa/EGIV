@@ -47,3 +47,4 @@ export const BookingCard: React.FC<{ data: BookingCardProps }> = ({ data }) => {
     </div>
   );
 };
+

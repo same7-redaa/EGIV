@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { NAV_LINKS, LOGO_SVG } from '../constants';
+import { NAV_LINKS } from '../core/constants';
+import { Logo } from './common/Logo';
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -52,7 +53,7 @@ export const Navbar = () => {
       <Link to="/" className="flex items-center gap-2 md:gap-3">
         <span className="text-white font-extrabold text-xl md:text-2xl tracking-widest font-sans">EGIV</span>
         <div className="w-8 h-8 md:w-10 md:h-10">
-          {LOGO_SVG}
+          <Logo />
         </div>
       </Link>
     </nav>
@@ -103,3 +104,4 @@ export const Navbar = () => {
     </>
   );
 };
+

@@ -182,3 +182,4 @@ export const AboutUsPage = () => {
     </div>
   );
 };
+

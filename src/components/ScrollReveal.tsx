@@ -74,3 +74,4 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
     </div>
   );
 };
+

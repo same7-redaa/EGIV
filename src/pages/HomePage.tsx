@@ -8,7 +8,7 @@ import { ChallengeSection } from '../features/ChallengeSection';
 import { RoomCarouselSection } from '../features/RoomCarouselSection';
 import { AIRoomDesignSection } from '../features/AIRoomDesignSection';
 import { TestimonialsSection } from '../features/TestimonialsSection';
-import { CARDS_DATA } from '../constants';
+import { CARDS_DATA } from '../core/constants';
 
 export const HomePage = () => {
   const [mounted, setMounted] = useState(false);
@@ -85,3 +85,4 @@ export const HomePage = () => {
     </div>
   );
 };
+

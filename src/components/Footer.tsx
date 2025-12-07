@@ -1,5 +1,5 @@
 import React from 'react';
-import { LOGO_SVG } from '../constants';
+import { Logo } from './common/Logo';
 
 export const Footer = () => {
   const navigationLinks = [
@@ -33,7 +33,7 @@ export const Footer = () => {
           <div className="flex items-center gap-3 md:gap-4 order-1">
             <span className="text-[#FFFFFF] font-extrabold text-xl md:text-3xl tracking-widest font-sans">EGIV</span>
             <div className="scale-100 md:scale-125">
-              {LOGO_SVG}
+              <Logo />
             </div>
           </div>
 
@@ -101,3 +101,4 @@ export const Footer = () => {
     </footer>
   );
 };
+

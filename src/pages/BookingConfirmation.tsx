@@ -94,7 +94,7 @@ export const BookingConfirmation = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("/back2.png")',
+            backgroundImage: 'url("/assets/images/background-top.png")',
             top: 0,
             height: '60%'
           }}
@@ -125,7 +125,7 @@ export const BookingConfirmation = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("/Back.png")',
+            backgroundImage: 'url("/assets/images/background-bottom.png")',
             top: '60%',
             height: '40%'
           }}
@@ -240,3 +240,4 @@ export const BookingConfirmation = () => {
     </div>
   );
 };
+

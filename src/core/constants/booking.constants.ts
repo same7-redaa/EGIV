@@ -1,12 +1,8 @@
-import React from 'react';
-import { BookingCardProps, NavLink } from './types';
+/**
+ * Booking and services constants
+ */
 
-export const NAV_LINKS: NavLink[] = [
-  { label: 'الرئيسية', href: '/home' },
-  { label: 'من نحن', href: '/about' },
-  { label: 'الخدمات', href: '/services' },
-  { label: 'المدونة', href: '/blog' },
-];
+import type { BookingCardProps } from '../types';
 
 export const CARDS_DATA: BookingCardProps[] = [
   {
@@ -31,21 +27,3 @@ export const CARDS_DATA: BookingCardProps[] = [
     image: '/src/assets/images/Rectangle 23.png',
   },
 ];
-
-const LOGO_URL = "https://i.postimg.cc/BvDpzfrJ/098-1.png";
-
-export const LOGO_SVG = (
-  <img 
-    src={LOGO_URL} 
-    alt="EGIV Logo" 
-    className="h-10 w-auto object-contain"
-  />
-);
-
-export const HERO_LOGO_SVG = (
-  <img 
-    src={LOGO_URL} 
-    alt="EGIV Hero Logo" 
-    className="h-40 md:h-56 w-auto object-contain"
-  />
-);

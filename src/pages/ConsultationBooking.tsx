@@ -34,7 +34,7 @@ export const ConsultationBooking = () => {
       {isLoading && (
         <div className="fixed inset-0 z-50 flex items-center justify-center" style={{backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>
           <div className="animate-bounce">
-            <img src="/logo.png" alt="Logo" className="w-48 h-48 object-contain" style={{animation: 'bounce 1s infinite'}} />
+            <img src="/assets/images/logo.png" alt="Logo" className="w-48 h-48 object-contain" style={{animation: 'bounce 1s infinite'}} />
           </div>
         </div>
       )}
@@ -45,7 +45,7 @@ export const ConsultationBooking = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("/back2.png")',
+            backgroundImage: 'url("/assets/images/background-top.png")',
             top: 0,
             height: '60%'
           }}
@@ -76,7 +76,7 @@ export const ConsultationBooking = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("/Back.png")',
+            backgroundImage: 'url("/assets/images/background-bottom.png")',
             top: '60%',
             height: '40%'
           }}
@@ -315,3 +315,4 @@ export const ConsultationBooking = () => {
     </div>
   );
 };
+

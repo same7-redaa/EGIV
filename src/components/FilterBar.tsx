@@ -20,3 +20,4 @@ export const FilterBar = () => {
     </div>
   );
 };
+

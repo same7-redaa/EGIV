@@ -25,7 +25,7 @@ export const BookingStep3 = () => {
     const loadLottie = async () => {
       try {
         const lottie = await import('lottie-web');
-        const response = await fetch('/Successfully done.json');
+        const response = await fetch('/assets/animations/success.json');
         const animationData = await response.json();
         
         if (lottieContainer.current) {
@@ -167,7 +167,7 @@ export const BookingStep3 = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("/back2.png")',
+            backgroundImage: 'url("/assets/images/background-top.png")',
             top: 0,
             height: '60%'
           }}
@@ -198,7 +198,7 @@ export const BookingStep3 = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: 'url("/Back.png")',
+            backgroundImage: 'url("/assets/images/background-bottom.png")',
             top: '60%',
             height: '40%'
           }}
@@ -360,3 +360,4 @@ export const BookingStep3 = () => {
     </div>
   );
 };
+
