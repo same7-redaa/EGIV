@@ -44,55 +44,55 @@ export const TestimonialsSection = () => {
   };
 
   return (
-    <section className="relative w-full py-16 md:py-32 bg-[#171819]">
-      <div className="container mx-auto max-w-[1800px] px-4 md:px-12 lg:px-20">
+    <section className="relative w-full py-10 md:py-20 bg-[#171819]">
+      <div className="container mx-auto max-w-[1200px] px-4 md:px-8 lg:px-12">
         
         {/* Header */}
-        <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 md:mb-6 font-tajawal px-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4 font-tajawal px-4">
             موثوق به من قبل آلاف العملاء السعداء
           </h2>
-          <p className="text-gray-400 text-sm sm:text-base md:text-xl lg:text-2xl px-4">
+          <p className="text-gray-400 text-xs sm:text-sm md:text-base lg:text-lg px-4">
             تعليقات حقيقية من لاعبين استخدموا غرف السوني والـ VR والسينما
           </p>
         </div>
 
         {/* Testimonial Cards */}
-        <div className="flex flex-col md:grid md:grid-cols-3 gap-6 md:gap-12 mb-12 md:mb-16">
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10">
           {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className={`bg-gray-900 rounded-xl p-6 md:p-8 lg:p-10 transition-all duration-300 ${
+              className={`bg-gray-900 rounded-xl p-4 md:p-5 lg:p-6 transition-all duration-300 ${
                 index === activeIndex
                   ? 'border-2 border-cyan-400 shadow-lg shadow-cyan-400/20 block'
                   : 'border border-gray-600 hover:border-gray-400 hidden md:block'
               }`}
             >
               {/* Top Row: Avatar + Rating */}
-              <div className="flex justify-between items-start mb-6 md:mb-8">
+              <div className="flex justify-between items-start mb-4 md:mb-5">
                 {/* Avatar + Name */}
-                <div className="flex items-center gap-3 md:gap-4">
+                <div className="flex items-center gap-2 md:gap-3">
                   <img 
                     src={testimonial.avatar} 
                     alt={testimonial.name}
-                    className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border-2 border-gray-700"
+                    className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover border-2 border-gray-700"
                   />
-                  <span className="text-white font-bold text-base md:text-xl">
+                  <span className="text-white font-bold text-sm md:text-base">
                     {testimonial.name}
                   </span>
                 </div>
 
                 {/* Rating */}
-                <div className="flex items-center gap-2">
-                  <span className="text-white font-bold text-base md:text-xl">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-white font-bold text-sm md:text-base">
                     {testimonial.rating}
                   </span>
-                  <i className="fa-solid fa-star text-yellow-500 text-lg md:text-2xl"></i>
+                  <i className="fa-solid fa-star text-yellow-500 text-base md:text-lg"></i>
                 </div>
               </div>
 
               {/* Review Text */}
-              <p className="text-gray-300 leading-relaxed text-right text-sm md:text-base lg:text-lg">
+              <p className="text-gray-300 leading-relaxed text-right text-xs md:text-sm">
                 {testimonial.text}
               </p>
             </div>

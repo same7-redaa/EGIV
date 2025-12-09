@@ -7,10 +7,14 @@ import { Footer } from '../components/Footer';
 export const SharedRoomBooking = () => {
   const [playerCount, setPlayerCount] = useState(4);
   const [selectedDate, setSelectedDate] = useState(23);
+  const [isNavigating, setIsNavigating] = useState(false);
   const navigate = useNavigate();
 
   const handleNext = () => {
-    navigate('/booking-step2?source=shared');
+    setIsNavigating(true);
+    setTimeout(() => {
+      navigate('/booking-step2?source=shared');
+    }, 50);
   };
 
   const incrementPlayers = () => setPlayerCount(playerCount + 1);
@@ -18,6 +22,10 @@ export const SharedRoomBooking = () => {
 
   // Generate calendar days
   const daysInMonth = Array.from({ length: 31 }, (_, i) => i + 1);
+
+  if (isNavigating) {
+    return null;
+  }
 
   return (
     <div className="min-h-screen bg-[#1D2334] text-white relative overflow-hidden" dir="rtl">
@@ -81,28 +89,28 @@ export const SharedRoomBooking = () => {
       <Sidebar />
 
       {/* Booking Content */}
-      <section className="relative z-10 pt-32 pb-20 px-4">
+      <section className="relative z-10 pt-20 pb-12 px-4">
         <div className="container mx-auto max-w-5xl">
           
           {/* Page Header */}
-          <div className="text-center mb-8 mt-16 md:mt-32">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 font-blue-ocean">
+          <div className="text-center mb-6 mt-8 md:mt-12">
+            <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-3 font-tajawal">
               احجز غرفتك المشتركة اليوم
             </h1>
-            <p className="text-gray-400 text-sm md:text-lg mb-8">
+            <p className="text-gray-400 text-xs md:text-base mb-6">
               اختر التاريخ والوقت المناسب واستمتع بتجربة مميزة
             </p>
           </div>
 
           {/* The Stepper */}
-          <div className="flex items-center justify-center mb-8 md:mb-12 relative px-4">
+          <div className="flex items-center justify-center mb-6 md:mb-8 relative px-4">
             
             {/* Steps */}
-            <div className="flex items-center gap-12 sm:gap-16 md:gap-24 lg:gap-32 relative z-10">
+            <div className="flex items-center gap-8 sm:gap-12 md:gap-16 lg:gap-20 relative z-10">
               {/* Step 1 - معلومات الحجز (الخطوة الحالية) */}
-              <div className="flex flex-col items-center gap-2">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 border-2 border-cyan-400 flex items-center justify-center shadow-lg shadow-cyan-500/50 animate-pulse">
-                  <i className="fas fa-calendar-alt text-white text-sm sm:text-base md:text-lg lg:text-xl"></i>
+              <div className="flex flex-col items-center gap-1.5">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 border-2 border-cyan-400 flex items-center justify-center shadow-lg shadow-cyan-500/50 animate-pulse">
+                  <i className="fas fa-calendar-alt text-white text-xs sm:text-sm md:text-base"></i>
                 </div>
                 <span className="text-cyan-400 text-[10px] sm:text-xs font-medium hidden sm:block">معلومات الحجز</span>
               </div>
@@ -140,22 +148,22 @@ export const SharedRoomBooking = () => {
           </div>
 
           {/* Main Card Container */}
-          <div className="bg-[#0f0f0f] border border-cyan-500/30 rounded-3xl p-8">
+          <div className="bg-[#0f0f0f] border border-cyan-500/30 rounded-3xl p-5 md:p-6">
             
             {/* Top Section: Counter (Number of People) */}
-            <div className="mb-8">
-              <p className="text-white text-center mb-4 text-lg">عدد الاشخاص</p>
-              <div className="bg-[#1a1a1a] rounded-xl p-6 flex items-center justify-between max-w-md mx-auto">
+            <div className="mb-5">
+              <p className="text-white text-center mb-3 text-base md:text-lg">عدد الاشخاص</p>
+              <div className="bg-[#1a1a1a] rounded-xl p-4 flex items-center justify-between max-w-md mx-auto">
                 <button 
                   onClick={decrementPlayers}
-                  className="w-12 h-12 rounded-full bg-cyan-400 flex items-center justify-center text-black text-2xl font-bold hover:bg-cyan-500 transition"
+                  className="w-10 h-10 rounded-full bg-cyan-400 flex items-center justify-center text-black text-xl font-bold hover:bg-cyan-500 transition"
                 >
                   -
                 </button>
-                <span className="text-white text-5xl font-bold">{playerCount}</span>
+                <span className="text-white text-3xl md:text-4xl font-bold">{playerCount}</span>
                 <button 
                   onClick={incrementPlayers}
-                  className="w-12 h-12 rounded-full bg-cyan-400 flex items-center justify-center text-black text-2xl font-bold hover:bg-cyan-500 transition"
+                  className="w-10 h-10 rounded-full bg-cyan-400 flex items-center justify-center text-black text-xl font-bold hover:bg-cyan-500 transition"
                 >
                   +
                 </button>
@@ -163,15 +171,15 @@ export const SharedRoomBooking = () => {
             </div>
 
             {/* Middle Section: Split Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
               
               {/* Right Column: Calendar Widget */}
               <div>
-                <h3 className="text-white text-lg mb-4">تاريخ الحجز</h3>
-                <div className="bg-[#1a1a1a] rounded-xl p-4">
+                <h3 className="text-white text-base md:text-lg mb-3">تاريخ الحجز</h3>
+                <div className="bg-[#1a1a1a] rounded-xl p-3">
                   {/* Calendar Header */}
-                  <div className="text-center mb-4">
-                    <p className="text-white text-lg font-medium">January 2024</p>
+                  <div className="text-center mb-3">
+                    <p className="text-white text-base font-medium">January 2024</p>
                   </div>
                   
                   {/* Days of Week */}
@@ -208,40 +216,40 @@ export const SharedRoomBooking = () => {
 
               {/* Left Column: Invoice Summary */}
               <div>
-                <h3 className="text-white text-lg mb-4">الفاتورة</h3>
-                <div className="bg-gray-200 rounded-xl p-6">
+                <h3 className="text-white text-base md:text-lg mb-3">الفاتورة</h3>
+                <div className="bg-gray-200 rounded-xl p-4">
                   
                   {/* Invoice Header */}
-                  <div className="flex items-center gap-2 mb-4">
+                  <div className="flex items-center gap-2 mb-3">
                     <i className="fas fa-file-invoice text-gray-700"></i>
-                    <h4 className="text-gray-900 font-bold text-lg">الفاتورة</h4>
+                    <h4 className="text-gray-900 font-bold text-base md:text-lg">الفاتورة</h4>
                   </div>
 
                   {/* Invoice Rows */}
-                  <div className="space-y-3">
+                  <div className="space-y-2.5">
                     
                     {/* Row 1: عدد الافراد */}
-                    <div className="flex justify-between items-center pb-3 border-b border-gray-300">
-                      <span className="text-gray-700">عدد الافراد</span>
-                      <span className="text-gray-900 font-medium">{playerCount}</span>
+                    <div className="flex justify-between items-center pb-2 border-b border-gray-300">
+                      <span className="text-gray-700 text-sm">عدد الافراد</span>
+                      <span className="text-gray-900 font-medium text-sm">{playerCount}</span>
                     </div>
 
                     {/* Row 2: الضريبة */}
-                    <div className="flex justify-between items-center pb-3 border-b border-gray-300">
-                      <span className="text-gray-700">الضريبة</span>
-                      <span className="text-gray-900 font-medium">14 %</span>
+                    <div className="flex justify-between items-center pb-2 border-b border-gray-300">
+                      <span className="text-gray-700 text-sm">الضريبة</span>
+                      <span className="text-gray-900 font-medium text-sm">14 %</span>
                     </div>
 
                     {/* Row 3: التاريخ */}
-                    <div className="flex justify-between items-center pb-3 border-b border-gray-300">
-                      <span className="text-gray-700">التاريخ</span>
-                      <span className="text-gray-900 font-medium">{selectedDate} يناير</span>
+                    <div className="flex justify-between items-center pb-2 border-b border-gray-300">
+                      <span className="text-gray-700 text-sm">التاريخ</span>
+                      <span className="text-gray-900 font-medium text-sm">{selectedDate} يناير</span>
                     </div>
 
                     {/* Row 4: الاجمالي */}
                     <div className="flex justify-between items-center pt-2">
-                      <span className="text-gray-900 font-bold text-lg">الاجمالي</span>
-                      <span className="text-gray-900 font-bold text-lg">220 ر.س</span>
+                      <span className="text-gray-900 font-bold text-base">الاجمالي</span>
+                      <span className="text-gray-900 font-bold text-base">220 ر.س</span>
                     </div>
 
                   </div>
@@ -251,12 +259,12 @@ export const SharedRoomBooking = () => {
             </div>
 
             {/* Bottom Section */}
-            <div className="space-y-4">
+            <div className="space-y-3">
               
               {/* Location Dropdown */}
               <div>
-                <label className="block text-white mb-2 text-right">الموقع</label>
-                <select className="w-full bg-[#1a1a1a] text-white rounded-lg p-4 border border-gray-800 focus:border-cyan-500 outline-none">
+                <label className="block text-white mb-2 text-right text-sm">الموقع</label>
+                <select className="w-full bg-[#1a1a1a] text-white rounded-lg p-3 border border-gray-800 focus:border-cyan-500 outline-none text-sm">
                   <option>اختر الموقع</option>
                   <option>الرياض - حي النخيل</option>
                   <option>جدة - حي الزهراء</option>
@@ -267,7 +275,7 @@ export const SharedRoomBooking = () => {
               {/* Next Button */}
               <button 
                 onClick={handleNext}
-                className="w-full border-2 text-white rounded-lg p-3 font-bold text-lg transition" 
+                className="w-full border-2 text-white rounded-lg p-2.5 font-bold text-base transition" 
                 style={{backgroundColor: 'rgba(81, 200, 208, 0.3)', borderColor: 'rgba(81, 200, 208, 0.5)'}}
               >
                 التالي
@@ -290,4 +298,6 @@ export const SharedRoomBooking = () => {
     </div>
   );
 };
+
+
 

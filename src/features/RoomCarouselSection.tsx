@@ -20,7 +20,7 @@ export const RoomCarouselSection = () => {
   };
 
   return (
-    <section ref={ref} className="relative w-full min-h-screen bg-[#050505] py-20 flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative w-full min-h-[600px] bg-[#050505] py-12 flex items-center justify-center overflow-hidden">
       {/* Background Image with Heavy Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -39,17 +39,17 @@ export const RoomCarouselSection = () => {
       }`}>
         
         {/* Header */}
-        <div className="text-center mb-24">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-white mb-4 font-blue-ocean">
+        <div className="text-center mb-16">
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold text-white mb-3 font-tajawal">
             ما نوع الغرفة الي تبيها ؟
           </h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-400 font-medium">
+          <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-400 font-medium">
             نسعى الى مستقبل ذكي في الغرف
           </p>
         </div>
 
         {/* 3D Carousel */}
-        <div className="relative h-[400px] md:h-[700px] flex items-center justify-center mb-12 mt-16">
+        <div className="relative h-[300px] md:h-[500px] flex items-center justify-center mb-8 mt-10">
           
           {/* Previous Button */}
           <button 
@@ -149,4 +149,6 @@ export const RoomCarouselSection = () => {
     </section>
   );
 };
+
+
 

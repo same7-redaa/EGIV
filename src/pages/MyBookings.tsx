@@ -1,23 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Navbar } from '../components/Navbar';
 import { Sidebar } from '../components/Sidebar';
 import { Footer } from '../components/Footer';
 
 export const MyBookings = () => {
-  const [showContent, setShowContent] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const [searchParams] = useSearchParams();
   const [activeTab, setActiveTab] = useState(searchParams.get('tab') || 'rooms');
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-      setShowContent(true);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   // Sample bookings data
   const bookings = [
@@ -127,30 +116,21 @@ export const MyBookings = () => {
       {/* Left Sidebar */}
       <Sidebar />
 
-      {/* Loading Overlay with Logo */}
-      {isLoading && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center" style={{backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>
-          <div className="animate-bounce">
-            <img src="/assets/images/logo.png" alt="Logo" className="w-48 h-48 object-contain" style={{animation: 'bounce 1s infinite'}} />
-          </div>
-        </div>
-      )}
-
       {/* My Bookings Dashboard Content */}
-      <section className="relative z-10 pt-32 pb-20 px-4">
+      <section className="relative z-10 pt-32 pb-20 px-4 min-h-screen">
         <div className="container mx-auto max-w-7xl">
           
           {/* Dashboard Header */}
-          <div className="text-center mb-12 mt-32">
-            <h1 className="text-5xl font-bold text-white mb-4 font-blue-ocean">
+          <div className="text-center mb-24 mt-20">
+            <h1 className="text-5xl font-bold text-white mb-4 font-tajawal">
               حجوزاتي
             </h1>
-            <p className="text-gray-400 text-lg mb-12">
+            <p className="text-gray-400 text-lg mb-16">
               تابع كل حجوزاتك هنا بكل سهولة، واعرف حالة كل حجز وتفاصيله بسرعة
             </p>
 
             {/* Navigation Tabs (Filter Bar) */}
-            <div className="flex items-center justify-center gap-12 mb-12">
+            <div className="flex items-center justify-center gap-12">
               <button 
                 onClick={() => setActiveTab('rooms')}
                 className={`pb-3 text-lg font-medium transition ${
@@ -184,9 +164,8 @@ export const MyBookings = () => {
             </div>
           </div>
 
-          {showContent && (
-            /* Bookings Grid (Main Content) */
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in">
+          {/* Bookings Grid (Main Content) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in max-w-6xl mx-auto">
               
               {bookings.map((booking) => (
                 <div key={booking.id} className="bg-[#0a0a0a] border border-cyan-500/30 p-6" style={{borderRadius: '24px 0 24px 0'}}>
@@ -260,7 +239,6 @@ export const MyBookings = () => {
               ))}
 
             </div>
-          )}
 
         </div>
       </section>
@@ -275,4 +253,6 @@ export const MyBookings = () => {
     </div>
   );
 };
+
+
 

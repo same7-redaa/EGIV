@@ -7,6 +7,7 @@ interface PageTransitionProps {
 
 export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
   const location = useLocation();
 
   // Pages that should skip the transition (they have their own loading)
@@ -20,24 +21,32 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
   useEffect(() => {
     if (!shouldShowTransition) {
       setIsLoading(false);
+      setShowContent(true);
       document.body.style.overflow = 'auto';
       return;
     }
 
     // Show loading on route change
     setIsLoading(true);
+    setShowContent(false);
     
     // Prevent scrolling when loading
     document.body.style.overflow = 'hidden';
     
+    // Show content after a brief delay, then hide loading
+    const contentTimer = setTimeout(() => {
+      setShowContent(true);
+    }, 100);
+    
     // Hide loading after animation
-    const timer = setTimeout(() => {
+    const loadingTimer = setTimeout(() => {
       setIsLoading(false);
       document.body.style.overflow = 'auto';
     }, 1500);
 
     return () => {
-      clearTimeout(timer);
+      clearTimeout(contentTimer);
+      clearTimeout(loadingTimer);
       document.body.style.overflow = 'auto';
     };
   }, [location.pathname, shouldShowTransition]);
@@ -62,7 +71,8 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
             position: 'fixed',
             overflow: 'hidden',
             margin: 0,
-            padding: 0
+            padding: 0,
+            zoom: 1.11 // تعويض الـ zoom out بـ zoom خاص
           }}
         >
           <div className="animate-bounce">
@@ -76,13 +86,15 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ children }) => {
       )}
 
       {/* Page Content with Fade In Animation */}
-      <div 
-        className={`transition-all duration-700 ${
-          isLoading && shouldShowTransition ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
-        }`}
-      >
-        {children}
-      </div>
+      {showContent && (
+        <div 
+          className={`transition-all duration-700 ${
+            isLoading && shouldShowTransition ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+          }`}
+        >
+          {children}
+        </div>
+      )}
     </>
   );
 };

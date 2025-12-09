@@ -7,11 +7,18 @@ export default defineConfig(({ mode }) => {
     return {
       server: {
         port: 3000,
-        host: '0.0.0.0',
+        host: true,
+        hmr: {
+          overlay: true,
+          clientPort: 3000
+        },
+        watch: {
+          usePolling: true
+        }
       },
       plugins: [react()],
       optimizeDeps: {
-        exclude: ['firebase', 'firebase/firestore']
+        exclude: ['firebase', 'firebase/firestore', 'firebase/app', 'firebase/auth']
       },
       define: {
         'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
@@ -20,6 +27,14 @@ export default defineConfig(({ mode }) => {
       resolve: {
         alias: {
           '@': path.resolve(__dirname, '.'),
+        }
+      },
+      build: {
+        sourcemap: false,
+        rollupOptions: {
+          output: {
+            manualChunks: undefined
+          }
         }
       }
     };

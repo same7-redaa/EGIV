@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "lottie-web": "^5.13.0",
+    "qrcode.react": "^4.2.0",
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-router-dom": "^7.10.1"

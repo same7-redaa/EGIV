@@ -35,16 +35,16 @@ export const HomePage = () => {
         <Hero />
 
         {/* Section Header */}
-        <div className="container mx-auto max-w-7xl relative z-10 px-4 mb-8">
+        <div className="container mx-auto max-w-[1200px] relative z-10 px-4 md:px-6 mb-4">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-gray-400 text-lg font-cairo">تجارب السباق</span>
-            <span className="text-white text-lg font-cairo">الكل</span>
+            <span className="text-gray-400 text-sm font-cairo">تجارب السباق</span>
+            <span className="text-white text-sm font-cairo">الكل</span>
           </div>
           <div className="w-full h-0.5 bg-gray-600"></div>
         </div>
 
         {/* Cards Grid */}
-        <section className="relative w-full py-12 bg-black">
+        <section className="relative w-full py-10 bg-black">
           {/* Gradient at top to blend with hero section */}
           <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-black to-transparent z-[1]"></div>
           
@@ -56,8 +56,8 @@ export const HomePage = () => {
             <img src="/bg image 2.png" alt="" className="w-full h-full object-cover" />
           </div>
           
-          <div className="container mx-auto max-w-[1600px] px-4 md:px-12 relative z-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="container mx-auto max-w-[1200px] px-4 md:px-6 relative z-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
               {CARDS_DATA.map((card, index) => (
                 <AnimatedCard key={card.id} data={card} index={index} />
               ))}

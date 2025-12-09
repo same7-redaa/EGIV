@@ -95,7 +95,7 @@ export const BookingDetails = () => {
           
           {/* Page Header */}
           <div className="text-center mb-8 mt-16 md:mt-32">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 font-blue-ocean">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 font-tajawal">
               تفاصيل حجز
             </h1>
             <p className="text-gray-400 text-sm md:text-lg">
@@ -277,4 +277,6 @@ export const BookingDetails = () => {
     </div>
   );
 };
+
+
 

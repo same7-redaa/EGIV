@@ -83,13 +83,13 @@ export const LoginPage = () => {
       <Sidebar />
 
       {/* Login Content */}
-      <section className="relative z-10 pt-32 pb-20 px-4 flex-grow flex items-center">
+      <section className="relative z-10 pt-24 pb-20 px-4 flex-grow flex items-start">
         <div className="container mx-auto max-w-5xl">
           
           {/* Page Header */}
           <ScrollReveal direction="up">
-            <div className="text-center mb-12 mt-32">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-blue-ocean">
+            <div className="text-center mb-8 mt-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-tajawal">
                 تسجيل الدخول
               </h1>
               <p className="text-gray-400 text-xl font-cairo">
@@ -139,7 +139,7 @@ export const LoginPage = () => {
 
                 {/* Forgot Password Link */}
                 <div className="text-left mb-8">
-                  <Link to="/otp-verification" className="text-cyan-500 hover:text-cyan-400 text-sm font-cairo transition">
+                  <Link to="/reset-password" className="text-cyan-500 hover:text-cyan-400 text-sm font-cairo transition">
                     هل نسيت كلمة المرور؟
                   </Link>
                 </div>
@@ -194,4 +194,6 @@ export const LoginPage = () => {
     </div>
   );
 };
+
+
 

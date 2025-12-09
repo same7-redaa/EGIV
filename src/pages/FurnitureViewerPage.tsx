@@ -79,7 +79,7 @@ export const FurnitureViewerPage = () => {
           {/* Page Header with Toggle Switch */}
           <ScrollReveal direction="up">
             <div className="text-center mb-8 mt-24">
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 font-blue-ocean">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8 font-tajawal">
                 تصميم ديكور غرفتك بنظام 3D
               </h1>
               <p className="text-gray-400 text-lg font-cairo mb-4">
@@ -199,4 +199,6 @@ export const FurnitureViewerPage = () => {
     </div>
   );
 };
+
+
 

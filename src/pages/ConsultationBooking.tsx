@@ -5,39 +5,33 @@ import { Sidebar } from '../components/Sidebar';
 import { Footer } from '../components/Footer';
 
 export const ConsultationBooking = () => {
-  const [isLoading, setIsLoading] = useState(false);
   const [playerCount, setPlayerCount] = useState(4);
+  const [isNavigating, setIsNavigating] = useState(false);
   const navigate = useNavigate();
 
   const handlePayNow = () => {
-    setIsLoading(true);
+    setIsNavigating(true);
     setTimeout(() => {
       navigate('/booking-step2?source=consultation');
-    }, 2000);
+    }, 50);
   };
 
   const handleConfirmBooking = () => {
-    // Save booking as pending and redirect
-    setIsLoading(true);
+    setIsNavigating(true);
     setTimeout(() => {
       navigate('/my-bookings?tab=consultations');
-    }, 2000);
+    }, 50);
   };
 
   const incrementPlayers = () => setPlayerCount(playerCount + 1);
   const decrementPlayers = () => playerCount > 1 && setPlayerCount(playerCount - 1);
 
+  if (isNavigating) {
+    return null;
+  }
+
   return (
     <div className="min-h-screen bg-[#1D2334] text-white relative overflow-hidden" dir="rtl">
-      
-      {/* Loading Overlay with Logo */}
-      {isLoading && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center" style={{backdropFilter: 'blur(10px)', backgroundColor: 'rgba(0, 0, 0, 0.7)'}}>
-          <div className="animate-bounce">
-            <img src="/assets/images/logo.png" alt="Logo" className="w-48 h-48 object-contain" style={{animation: 'bounce 1s infinite'}} />
-          </div>
-        </div>
-      )}
       
       {/* Background Images with Overlay */}
       <div className="absolute inset-0 z-0">
@@ -98,15 +92,15 @@ export const ConsultationBooking = () => {
       <Sidebar />
 
       {/* Consultation Booking Content */}
-      <section className="relative z-10 pt-32 pb-20 px-4">
-        <div className="container mx-auto max-w-7xl">
+      <section className="relative z-10 pt-20 pb-12 px-4">
+        <div className="container mx-auto max-w-6xl">
           
           {/* Header Section */}
-          <div className="text-center mb-12 mt-32">
-            <h1 className="text-4xl font-bold text-white mb-4 font-blue-ocean">
+          <div className="text-center mb-8 mt-12">
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-3 font-tajawal">
               احجز استشارتك
             </h1>
-            <p className="text-gray-400 text-lg mb-8">
+            <p className="text-gray-400 text-sm md:text-base mb-6">
               خطوات بسيطة... وتحجز أحلى تجربة لك ولأصحابك.
             </p>
           </div>
@@ -142,29 +136,29 @@ export const ConsultationBooking = () => {
           </div>
 
           {/* Main Card Container */}
-          <div className="bg-[#0a0a0a] border border-cyan-500/30 rounded-3xl p-8">
+          <div className="bg-[#0a0a0a] border border-cyan-500/30 rounded-3xl p-5 md:p-6">
             
             {/* Grid Layout - Split into 2 sections */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
               
               {/* Column B (Right Side): Form Fields - Takes 2 columns */}
-              <div className="lg:col-span-2 space-y-6">
+              <div className="lg:col-span-2 space-y-4">
                 
                 {/* Row 1: Name */}
                 <div>
-                  <label className="block text-white mb-2 text-right">الاسم</label>
+                  <label className="block text-white mb-1.5 text-right text-sm">الاسم</label>
                   <input 
                     type="text" 
-                    className="w-full bg-[#1a1a1a] text-white rounded-lg p-4 border border-gray-800 focus:border-cyan-500 outline-none"
+                    className="w-full bg-[#1a1a1a] text-white rounded-lg p-3 border border-gray-800 focus:border-cyan-500 outline-none text-sm"
                     placeholder="ادخل اسمك الكامل"
                   />
                 </div>
 
                 {/* Row 2: Date and Time */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-white mb-2 text-right">التاريخ</label>
-                    <select className="w-full bg-[#1a1a1a] text-white rounded-lg p-4 border border-gray-800 focus:border-cyan-500 outline-none">
+                    <label className="block text-white mb-1.5 text-right text-sm">التاريخ</label>
+                    <select className="w-full bg-[#1a1a1a] text-white rounded-lg p-3 border border-gray-800 focus:border-cyan-500 outline-none text-sm">
                       <option>اختر التاريخ</option>
                       <option>1 يناير 2024</option>
                       <option>2 يناير 2024</option>
@@ -172,8 +166,8 @@ export const ConsultationBooking = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-white mb-2 text-right">التوقيت</label>
-                    <select className="w-full bg-[#1a1a1a] text-white rounded-lg p-4 border border-gray-800 focus:border-cyan-500 outline-none">
+                    <label className="block text-white mb-1.5 text-right text-sm">التوقيت</label>
+                    <select className="w-full bg-[#1a1a1a] text-white rounded-lg p-3 border border-gray-800 focus:border-cyan-500 outline-none text-sm">
                       <option>اختر الوقت</option>
                       <option>09:00 صباحاً</option>
                       <option>12:00 ظهراً</option>
@@ -185,19 +179,19 @@ export const ConsultationBooking = () => {
 
                 {/* Row 3: Project Name */}
                 <div>
-                  <label className="block text-white mb-2 text-right">اسم المشروع</label>
+                  <label className="block text-white mb-1.5 text-right text-sm">اسم المشروع</label>
                   <input 
                     type="text" 
-                    className="w-full bg-[#1a1a1a] text-white rounded-lg p-4 border border-gray-800 focus:border-cyan-500 outline-none"
+                    className="w-full bg-[#1a1a1a] text-white rounded-lg p-3 border border-gray-800 focus:border-cyan-500 outline-none text-sm"
                     placeholder="ادخل اسم المشروع"
                   />
                 </div>
 
                 {/* Row 4: Room Size and People Counter */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-white mb-2 text-right">حجم الغرفة</label>
-                    <select className="w-full bg-[#1a1a1a] text-white rounded-lg p-4 border border-gray-800 focus:border-cyan-500 outline-none">
+                    <label className="block text-white mb-1.5 text-right text-sm">حجم الغرفة</label>
+                    <select className="w-full bg-[#1a1a1a] text-white rounded-lg p-3 border border-gray-800 focus:border-cyan-500 outline-none text-sm">
                       <option>اختر الحجم</option>
                       <option>صغيرة (2-4 أشخاص)</option>
                       <option>متوسطة (5-8 أشخاص)</option>
@@ -205,18 +199,18 @@ export const ConsultationBooking = () => {
                     </select>
                   </div>
                   <div>
-                    <label className="block text-white mb-2 text-right">عدد الاشخاص</label>
-                    <div className="bg-[#1a1a1a] rounded-lg p-4 flex items-center justify-between">
+                    <label className="block text-white mb-1.5 text-right text-sm">عدد الاشخاص</label>
+                    <div className="bg-[#1a1a1a] rounded-lg p-3 flex items-center justify-between">
                       <button 
                         onClick={decrementPlayers}
-                        className="w-10 h-10 rounded-full bg-cyan-400 flex items-center justify-center text-black text-xl font-bold hover:bg-cyan-500 transition"
+                        className="w-8 h-8 rounded-full bg-cyan-400 flex items-center justify-center text-black text-lg font-bold hover:bg-cyan-500 transition"
                       >
                         -
                       </button>
-                      <span className="text-white text-3xl font-bold">{playerCount}</span>
+                      <span className="text-white text-2xl font-bold">{playerCount}</span>
                       <button 
                         onClick={incrementPlayers}
-                        className="w-10 h-10 rounded-full bg-cyan-400 flex items-center justify-center text-black text-xl font-bold hover:bg-cyan-500 transition"
+                        className="w-8 h-8 rounded-full bg-cyan-400 flex items-center justify-center text-black text-lg font-bold hover:bg-cyan-500 transition"
                       >
                         +
                       </button>
@@ -226,10 +220,10 @@ export const ConsultationBooking = () => {
 
                 {/* Row 5: Additional Instructions */}
                 <div>
-                  <label className="block text-white mb-2 text-right">تعليمات اضافية</label>
+                  <label className="block text-white mb-1.5 text-right text-sm">تعليمات اضافية</label>
                   <textarea 
-                    rows="4"
-                    className="w-full bg-[#1a1a1a] text-white rounded-lg p-4 border border-gray-800 focus:border-cyan-500 outline-none resize-none"
+                    rows="3"
+                    className="w-full bg-[#1a1a1a] text-white rounded-lg p-3 border border-gray-800 focus:border-cyan-500 outline-none resize-none text-sm"
                     placeholder="اكتب أي ملاحظات أو متطلبات خاصة..."
                   ></textarea>
                 </div>
@@ -238,45 +232,45 @@ export const ConsultationBooking = () => {
 
               {/* Column A (Left Side): Invoice Widget */}
               <div className="lg:col-span-1">
-                <div className="bg-white rounded-xl p-6 sticky top-8">
+                <div className="bg-white rounded-xl p-4 sticky top-8">
                   
                   {/* Invoice Header */}
-                  <div className="flex items-center gap-2 mb-4">
-                    <i className="fas fa-file-invoice text-gray-700"></i>
-                    <h3 className="text-gray-900 font-bold text-lg">الفاتورة</h3>
+                  <div className="flex items-center gap-2 mb-3">
+                    <i className="fas fa-file-invoice text-gray-700 text-sm"></i>
+                    <h3 className="text-gray-900 font-bold text-base">الفاتورة</h3>
                   </div>
 
                   {/* Invoice Rows */}
-                  <div className="space-y-3">
+                  <div className="space-y-2.5">
                     
                     {/* Row 1: عدد الافراد */}
-                    <div className="flex justify-between items-center pb-3 border-b border-gray-300">
-                      <span className="text-gray-700">عدد الافراد</span>
-                      <div className="flex items-center gap-4">
-                        <span className="text-gray-900 font-medium">{playerCount}</span>
-                        <span className="text-gray-900 font-medium">200 ر.س</span>
+                    <div className="flex justify-between items-center pb-2 border-b border-gray-300">
+                      <span className="text-gray-700 text-xs">عدد الافراد</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-gray-900 font-medium text-xs">{playerCount}</span>
+                        <span className="text-gray-900 font-medium text-xs">200 ر.س</span>
                       </div>
                     </div>
 
                     {/* Row 2: الضريبة */}
-                    <div className="flex justify-between items-center pb-3 border-b border-gray-300">
-                      <span className="text-gray-700">الضريبة</span>
-                      <div className="flex items-center gap-4">
-                        <span className="text-gray-900 font-medium">14 %</span>
-                        <span className="text-gray-900 font-medium">20 ر.س</span>
+                    <div className="flex justify-between items-center pb-2 border-b border-gray-300">
+                      <span className="text-gray-700 text-xs">الضريبة</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-gray-900 font-medium text-xs">14 %</span>
+                        <span className="text-gray-900 font-medium text-xs">20 ر.س</span>
                       </div>
                     </div>
 
                     {/* Row 3: التاريخ */}
-                    <div className="flex justify-between items-center pb-3 border-b border-gray-300">
-                      <span className="text-gray-700">التاريخ</span>
-                      <span className="text-gray-900 font-medium">4 اكتوبر</span>
+                    <div className="flex justify-between items-center pb-2 border-b border-gray-300">
+                      <span className="text-gray-700 text-xs">التاريخ</span>
+                      <span className="text-gray-900 font-medium text-xs">4 اكتوبر</span>
                     </div>
 
                     {/* Row 4: الاجمالي */}
                     <div className="flex justify-between items-center pt-2">
-                      <span className="text-gray-900 font-bold text-lg">الاجمالي</span>
-                      <span className="text-gray-900 font-bold text-lg">220 ر.س</span>
+                      <span className="text-gray-900 font-bold text-sm">الاجمالي</span>
+                      <span className="text-gray-900 font-bold text-sm">220 ر.س</span>
                     </div>
 
                   </div>
@@ -286,11 +280,11 @@ export const ConsultationBooking = () => {
             </div>
 
             {/* Footer Actions */}
-            <div className="flex justify-center mt-8">
+            <div className="flex justify-center mt-5">
               {/* Button: Pay Now */}
               <button 
                 onClick={handlePayNow}
-                className="w-full md:w-1/2 border-2 text-white rounded-lg p-3 font-bold text-lg transition"
+                className="w-full md:w-1/2 border-2 text-white rounded-lg p-2.5 font-bold text-base transition"
                 style={{
                   backgroundColor: 'rgba(81, 200, 208, 0.3)',
                   borderColor: 'rgba(81, 200, 208, 0.5)'
@@ -315,4 +309,6 @@ export const ConsultationBooking = () => {
     </div>
   );
 };
+
+
 

@@ -15,22 +15,13 @@ export const SharedBookingConfirmation = () => {
   const [showScreenshotBlock, setShowScreenshotBlock] = useState(false);
 
   useEffect(() => {
-      useEffect(() => {
-        const timer = setTimeout(() => {
-          setShowSuccessText(false);
-          setTimeout(() => {
-            setShowQR(true);
-          }, 400);
-        }, 2000);
-        return () => clearTimeout(timer);
-      }, []);
     let animationInstance = null;
     
     // Load Lottie animation
     const loadLottie = async () => {
       try {
         const lottie = await import('lottie-web');
-        const response = await fetch('/Successfully done.json');
+        const response = await fetch('/assets/animations/success.json');
         const animationData = await response.json();
         
         if (lottieContainer.current) {
@@ -40,9 +31,19 @@ export const SharedBookingConfirmation = () => {
           animationInstance = lottie.default.loadAnimation({
             container: lottieContainer.current,
             renderer: 'svg',
-            loop: true,
+            loop: false,
             autoplay: true,
             animationData: animationData
+          });
+
+          // After animation completes once, hide success and show QR
+          animationInstance.addEventListener('complete', () => {
+            setTimeout(() => {
+              setShowSuccessText(false);
+              setTimeout(() => {
+                setShowQR(true);
+              }, 300);
+            }, 500);
           });
         }
       } catch (error) {
@@ -329,7 +330,7 @@ export const SharedBookingConfirmation = () => {
           
           {/* Component Header */}
           <div className="text-center mb-12 mt-32">
-            <h1 className="text-4xl font-bold text-white mb-4 font-blue-ocean">
+            <h1 className="text-4xl font-bold text-white mb-4 font-tajawal">
               تم تأكيد حجزك!
             </h1>
             <p className="text-gray-400 text-lg mb-8">
@@ -397,4 +398,6 @@ export const SharedBookingConfirmation = () => {
     </div>
   );
 };
+
+
 

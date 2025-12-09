@@ -10,7 +10,7 @@ export const ServicesPage = () => {
     {
       id: 1,
       title: 'غرف الكافي',
-      description: 'جناح خاص يوفر أجواء الصالات الأكثر تميزاً...',
+      description: 'جناح خاص يوفر أجواء الصالات الأكثر تميزا في رياضة السيارات. مصمم لما يصل إلى 8 ضيوف، مع جهازي محاكاة متطورين، وإعداد راق للترفيه الحصري - حيث تلتقي الخصوصية بالهيبة.',
       price: '800 SAR',
       image: '/src/assets/images/Rectangle 23.png',
       type: 'booking'
@@ -18,7 +18,7 @@ export const ServicesPage = () => {
     {
       id: 2,
       title: 'غرف الألعاب',
-      description: 'خاص، ماهر، عامر... صالتك الخاصة للتجمع',
+      description: 'خاص، فاخر، غامر. يوفر كل خليج VIP جهاز محاكاة شخصي وPS5 وتلفزيون بشاشة كبيرة - صالتك الخاصة للتجمع أو السباقات أو الرياضة المباشرة.',
       price: '800 SAR',
       image: '/src/assets/images/Rectangle 27.png',
       type: 'booking'
@@ -26,7 +26,7 @@ export const ServicesPage = () => {
     {
       id: 3,
       title: 'غرف مشتركة',
-      description: 'حدود الدمج مع 20 أو 40 دقيقة من السباق',
+      description: 'حدود الدفع مع 20 أو 40 أو 60 دقيقة من السباق. مثالي للأفراد أو المجموعات - بأسعار حصرية لأكثر من 4 سائقين.',
       price: '800 SAR',
       image: '/src/assets/images/Requirements.png',
       type: 'booking'
@@ -37,21 +37,21 @@ export const ServicesPage = () => {
     {
       id: 4,
       title: 'الذكاء الاصطناعي',
-      description: 'تجربة فريدة مدعومة بالذكاء الاصطناعي',
+      description: 'جناح خاص يوفر أجواء الصالات الأكثر تميزا في رياضة السيارات. مصمم لما يصل إلى 8 ضيوف، مع جهازي محاكاة متطورين، وإعداد راق للترفيه الحصري - حيث تلتقي الخصوصية بالهيبة.',
       image: '/src/assets/images/vision-vr.png',
       type: 'feature'
     },
     {
       id: 5,
       title: 'ديكور 3D',
-      description: 'تصميم ثلاثي الأبعاد لمساحتك الخاصة',
+      description: 'جناح خاص يوفر أجواء الصالات الأكثر تميزا في رياضة السيارات. مصمم لما يصل إلى 8 ضيوف، مع جهازي محاكاة متطورين، وإعداد راق للترفيه الحصري - حيث تلتقي الخصوصية بالهيبة.',
       image: '/src/assets/images/Requirements.png',
       type: 'feature'
     },
     {
       id: 6,
       title: 'الغرف الاستشارية',
-      description: 'استشارات متخصصة لتجربة مميزة',
+      description: 'حدود الدفع مع 20 أو 40 أو 60 دقيقة من السباق. مثالي للأفراد أو المجموعات - بأسعار حصرية لأكثر من 4 سائقين.',
       price: '800 SAR',
       image: '/src/assets/images/Rectangle 23.png',
       type: 'booking'
@@ -112,16 +112,16 @@ export const ServicesPage = () => {
       <Sidebar />
 
       {/* Page Header (Hero) */}
-      <section className="relative z-10 pt-32 pb-20 px-4 flex-grow">
-        <div className="container mx-auto max-w-7xl">
+      <section className="relative z-10 pt-24 pb-12 px-4 flex-grow">
+        <div className="container mx-auto max-w-6xl">
 
           {/* Title & Subtitle */}
           <ScrollReveal direction="up">
-            <div className="text-center mb-12 mt-32">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 font-blue-ocean">
+            <div className="text-center mb-8 mt-16">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 font-tajawal">
                 خدماتنا
               </h1>
-              <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto">
+              <p className="text-gray-300 text-base md:text-lg max-w-2xl mx-auto">
                 مجموعة خدمات ترفيهية متكاملة مصممة لعشاق الألعاب والتجارب المميزة.
               </p>
             </div>
@@ -129,9 +129,9 @@ export const ServicesPage = () => {
 
           {/* Filter Bar */}
           <ScrollReveal direction="up" delay={100}>
-            <div className="mb-8">
+            <div className="mb-6">
               <div className="text-right">
-                <span className="text-white text-lg">احدث الخدمات</span>
+                <span className="text-white text-base">احدث الخدمات</span>
                 <div className="w-full h-0.5 bg-gray-600 mt-2"></div>
               </div>
             </div>
@@ -140,11 +140,11 @@ export const ServicesPage = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="relative z-10 pb-32 px-4">
-        <div className="container mx-auto max-w-7xl">
+      <section className="relative z-10 pb-20 px-4">
+        <div className="container mx-auto max-w-6xl">
           
           {/* Row 1: Booking Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
             {bookingServices.map((service, index) => (
               <ScrollReveal key={service.id} direction="up" delay={200 + (index * 100)}>
                 <Link to="/booking" className="block">
@@ -159,24 +159,24 @@ export const ServicesPage = () => {
                 </div>
                 
                 {/* Content */}
-                <div className="p-6 bg-[#18181b]">
-                  <h3 className="text-2xl font-bold text-white mb-4 text-right font-tajawal">
+                <div className="p-4 bg-[#18181b]">
+                  <h3 className="text-xl font-bold text-white mb-3 text-right font-tajawal">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6 text-right">
+                  <p className="text-gray-400 text-xs leading-relaxed mb-4 text-right" style={{minHeight: 'auto'}}>
                     {service.description}
                   </p>
                   
                   {/* Action Footer - Fully Rounded Block (Inset) */}
                   <Link to={service.id === 3 ? '/shared-room-booking' : '/booking'} className="block">
-                    <div className="bg-[#22d3ee] rounded-xl p-4 flex items-center justify-between cursor-pointer hover:bg-cyan-400 transition">
-                      <div className="flex items-center gap-3">
-                        <i className="fa-regular fa-calendar text-white text-xl"></i>
-                        <span className="text-white font-bold text-base">احجز الآن</span>
+                    <div className="bg-[#22d3ee] rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-cyan-400 transition">
+                      <div className="flex items-center gap-2">
+                        <i className="fa-regular fa-calendar text-white text-lg"></i>
+                        <span className="text-white font-bold text-sm">احجز الآن</span>
                       </div>
                       <div className="text-right">
                         <p className="text-white text-xs font-medium">ابتدأ من</p>
-                        <p className="text-white font-bold text-xl">{service.price}</p>
+                        <p className="text-white font-bold text-lg">{service.price}</p>
                       </div>
                     </div>
                   </Link>
@@ -188,7 +188,7 @@ export const ServicesPage = () => {
           </div>
 
           {/* Row 2: Feature Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {featureServices.map((service, index) => (
               <ScrollReveal key={service.id} direction="up" delay={200 + (index * 100)}>
                 <div className="bg-[#18181b] border border-cyan-500/50 overflow-hidden hover:transform hover:scale-105 transition-all duration-300 hover:border-cyan-500/80" style={{borderRadius: '24px 0 24px 0'}}>
@@ -202,11 +202,11 @@ export const ServicesPage = () => {
                 </div>
                 
                 {/* Content */}
-                <div className="p-6 bg-[#18181b]">
-                  <h3 className="text-2xl font-bold text-white mb-4 text-right font-tajawal">
+                <div className="p-4 bg-[#18181b]">
+                  <h3 className="text-xl font-bold text-white mb-3 text-right font-tajawal">
                     {service.title}
                   </h3>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-6 text-right">
+                  <p className="text-gray-400 text-xs leading-relaxed mb-4 text-right" style={{minHeight: 'auto'}}>
                     {service.description}
                   </p>
                   
@@ -214,21 +214,21 @@ export const ServicesPage = () => {
                   {service.type === 'feature' ? (
                     /* Variation B: Action Card (No Price) - Fully Rounded Block (Inset) */
                     <Link to={service.id === 4 ? '/projects' : service.id === 5 ? '/furniture-viewer' : '/booking'} className="block">
-                      <div className="bg-[#22d3ee] rounded-xl p-4 flex items-center justify-center cursor-pointer hover:bg-cyan-400 transition">
-                        <span className="text-white font-bold text-lg">جرب الآن</span>
+                      <div className="bg-[#22d3ee] rounded-xl p-3 flex items-center justify-center cursor-pointer hover:bg-cyan-400 transition">
+                        <span className="text-white font-bold text-base">جرب الآن</span>
                       </div>
                     </Link>
                   ) : (
                     /* Variation A: Booking Card (With Price) - Fully Rounded Block (Inset) */
                     <Link to={service.id === 6 ? '/consultation-booking' : '/booking'} className="block">
-                      <div className="bg-[#22d3ee] rounded-xl p-4 flex items-center justify-between cursor-pointer hover:bg-cyan-400 transition">
-                        <div className="flex items-center gap-3">
-                          <i className="fa-regular fa-calendar text-white text-xl"></i>
-                          <span className="text-white font-bold text-base">احجز الآن</span>
+                      <div className="bg-[#22d3ee] rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-cyan-400 transition">
+                        <div className="flex items-center gap-2">
+                          <i className="fa-regular fa-calendar text-white text-lg"></i>
+                          <span className="text-white font-bold text-sm">احجز الآن</span>
                         </div>
                         <div className="text-right">
                           <p className="text-white text-xs font-medium">ابتدأ من</p>
-                          <p className="text-white font-bold text-xl">{service.price}</p>
+                          <p className="text-white font-bold text-lg">{service.price}</p>
                         </div>
                       </div>
                     </Link>
@@ -252,4 +252,6 @@ export const ServicesPage = () => {
     </div>
   );
 };
+
+
 

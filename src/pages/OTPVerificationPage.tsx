@@ -117,7 +117,7 @@ export const OTPVerificationPage = () => {
           {/* Page Header */}
           <ScrollReveal direction="up">
             <div className="text-center mb-12 mt-32">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-blue-ocean">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-tajawal">
                 رمز التحقق
               </h1>
               <p className="text-gray-400 text-lg sm:text-xl font-cairo">
@@ -231,4 +231,6 @@ export const OTPVerificationPage = () => {
     </div>
   );
 };
+
+
 

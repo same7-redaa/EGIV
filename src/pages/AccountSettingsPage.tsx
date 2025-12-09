@@ -81,13 +81,13 @@ export const AccountSettingsPage = () => {
       <Sidebar />
 
       {/* Account Settings Content */}
-      <section className="relative z-10 pt-32 pb-20 px-4 flex-grow flex items-center">
+      <section className="relative z-10 pt-24 pb-20 px-4 flex-grow flex items-start">
         <div className="container mx-auto max-w-6xl">
           
           {/* Page Header */}
           <ScrollReveal direction="up">
-            <div className="text-center mb-12 mt-32">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-blue-ocean">
+            <div className="text-center mb-8 mt-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-tajawal">
                 إعدادات الحساب
               </h1>
               <p className="text-gray-400 text-xl font-cairo">
@@ -245,4 +245,6 @@ export const AccountSettingsPage = () => {
     </div>
   );
 };
+
+
 
