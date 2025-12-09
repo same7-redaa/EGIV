@@ -11,42 +11,42 @@ export const BlogPage = () => {
       id: 1,
       title: 'أفضل الألعاب الجماعية لعام 2024',
       description: 'اكتشف قائمة بأحدث وأفضل الألعاب التي يمكنك الاستمتاع بها مع أصدقائك في صالات الألعاب',
-      image: '/src/assets/images/Rectangle 27.png',
+      image: '/assets/images/Rectangle 27.png',
       date: '15 نوفمبر 2024'
     },
     {
       id: 2,
       title: 'كيف تختار الغرفة المناسبة لفريقك',
       description: 'نصائح وإرشادات لاختيار الغرفة الأنسب حسب عدد الأشخاص ونوع النشاط المطلوب',
-      image: '/src/assets/images/Rectangle 23.png',
+      image: '/assets/images/Rectangle 23.png',
       date: '10 نوفمبر 2024'
     },
     {
       id: 3,
       title: 'تجربة الواقع الافتراضي VR',
       description: 'دليل شامل حول تقنية الواقع الافتراضي وكيف تعزز تجربة الألعاب لديك',
-      image: '/src/assets/images/vision-vr.png',
+      image: '/assets/images/vision-vr.png',
       date: '5 نوفمبر 2024'
     },
     {
       id: 4,
       title: 'نصائح لتنظيم حفلة ألعاب مميزة',
       description: 'خطوات ونصائح عملية لجعل حفلتك القادمة في صالة الألعاب لا تُنسى',
-      image: '/src/assets/images/Requirements.png',
+      image: '/assets/images/Requirements.png',
       date: '1 نوفمبر 2024'
     },
     {
       id: 5,
       title: 'الذكاء الاصطناعي في عالم الألعاب',
       description: 'كيف يغير الذكاء الاصطناعي من طريقة لعبنا وتفاعلنا مع الألعاب الحديثة',
-      image: '/src/assets/images/vision-vr.png',
+      image: '/assets/images/vision-vr.png',
       date: '28 أكتوبر 2024'
     },
     {
       id: 6,
       title: 'استشارات التصميم الداخلي للغرف',
       description: 'تعرف على كيفية تصميم غرفة ألعاب مثالية في منزلك أو مكتبك',
-      image: '/src/assets/images/Rectangle 23.png',
+      image: '/assets/images/Rectangle 23.png',
       date: '20 أكتوبر 2024'
     }
   ];
@@ -195,6 +195,7 @@ export const BlogPage = () => {
     </div>
   );
 };
+
 
 
 

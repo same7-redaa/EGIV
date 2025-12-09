@@ -6,9 +6,9 @@ export const RoomCarouselSection = () => {
   const [activeIndex, setActiveIndex] = useState(1);
   
   const rooms = [
-    { id: 1, name: "غرفة VR", image: "/src/assets/images/Rectangle 23.png" },
-    { id: 2, name: "غرفة السباق", image: "/src/assets/images/Rectangle 23.png" },
-    { id: 3, name: "غرفة السوني", image: "/src/assets/images/Rectangle 23.png" },
+    { id: 1, name: "غرفة VR", image: "/assets/images/Rectangle 23.png" },
+    { id: 2, name: "غرفة السباق", image: "/assets/images/Rectangle 23.png" },
+    { id: 3, name: "غرفة السوني", image: "/assets/images/Rectangle 23.png" },
   ];
 
   const nextSlide = () => {
@@ -149,6 +149,7 @@ export const RoomCarouselSection = () => {
     </section>
   );
 };
+
 
 
 

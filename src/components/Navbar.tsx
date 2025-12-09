@@ -193,7 +193,7 @@ export const Navbar = () => {
                   title: 'غرف الكافي',
                   description: 'جناح خاص يوفر أجواء الصالات الأكثر تميزا في رياضة السيارات.',
                   price: '800 SAR',
-                  image: '/src/assets/images/Rectangle 23.png',
+                  image: '/assets/images/Rectangle 23.png',
                   link: '/booking'
                 },
                 {
@@ -201,7 +201,7 @@ export const Navbar = () => {
                   title: 'غرف الألعاب',
                   description: 'خاص، فاخر، غامر. يوفر كل خليج VIP جهاز محاكاة شخصي وPS5.',
                   price: '800 SAR',
-                  image: '/src/assets/images/Rectangle 27.png',
+                  image: '/assets/images/Rectangle 27.png',
                   link: '/booking'
                 },
                 {
@@ -209,14 +209,14 @@ export const Navbar = () => {
                   title: 'غرف مشتركة',
                   description: 'حدود الدفع مع 20 أو 40 أو 60 دقيقة من السباق.',
                   price: '800 SAR',
-                  image: '/src/assets/images/Requirements.png',
+                  image: '/assets/images/Requirements.png',
                   link: '/shared-room-booking'
                 },
                 {
                   id: 4,
                   title: 'الذكاء الاصطناعي',
                   description: 'جناح خاص يوفر أجواء الصالات الأكثر تميزا في رياضة السيارات.',
-                  image: '/src/assets/images/vision-vr.png',
+                  image: '/assets/images/vision-vr.png',
                   type: 'feature',
                   link: '/projects'
                 },
@@ -224,7 +224,7 @@ export const Navbar = () => {
                   id: 5,
                   title: 'ديكور 3D',
                   description: 'جناح خاص يوفر أجواء الصالات الأكثر تميزا في رياضة السيارات.',
-                  image: '/src/assets/images/Requirements.png',
+                  image: '/assets/images/Requirements.png',
                   type: 'feature',
                   link: '/furniture-viewer'
                 },
@@ -233,7 +233,7 @@ export const Navbar = () => {
                   title: 'الغرف الاستشارية',
                   description: 'حدود الدفع مع 20 أو 40 أو 60 دقيقة من السباق.',
                   price: '800 SAR',
-                  image: '/src/assets/images/Rectangle 23.png',
+                  image: '/assets/images/Rectangle 23.png',
                   type: 'booking',
                   link: '/consultation-booking'
                 }

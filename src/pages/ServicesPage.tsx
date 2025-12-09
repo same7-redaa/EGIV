@@ -12,7 +12,7 @@ export const ServicesPage = () => {
       title: 'غرف الكافي',
       description: 'جناح خاص يوفر أجواء الصالات الأكثر تميزا في رياضة السيارات. مصمم لما يصل إلى 8 ضيوف، مع جهازي محاكاة متطورين، وإعداد راق للترفيه الحصري - حيث تلتقي الخصوصية بالهيبة.',
       price: '800 SAR',
-      image: '/src/assets/images/Rectangle 23.png',
+      image: '/assets/images/Rectangle 23.png',
       type: 'booking'
     },
     {
@@ -20,7 +20,7 @@ export const ServicesPage = () => {
       title: 'غرف الألعاب',
       description: 'خاص، فاخر، غامر. يوفر كل خليج VIP جهاز محاكاة شخصي وPS5 وتلفزيون بشاشة كبيرة - صالتك الخاصة للتجمع أو السباقات أو الرياضة المباشرة.',
       price: '800 SAR',
-      image: '/src/assets/images/Rectangle 27.png',
+      image: '/assets/images/Rectangle 27.png',
       type: 'booking'
     },
     {
@@ -28,7 +28,7 @@ export const ServicesPage = () => {
       title: 'غرف مشتركة',
       description: 'حدود الدفع مع 20 أو 40 أو 60 دقيقة من السباق. مثالي للأفراد أو المجموعات - بأسعار حصرية لأكثر من 4 سائقين.',
       price: '800 SAR',
-      image: '/src/assets/images/Requirements.png',
+      image: '/assets/images/Requirements.png',
       type: 'booking'
     }
   ];
@@ -38,14 +38,14 @@ export const ServicesPage = () => {
       id: 4,
       title: 'الذكاء الاصطناعي',
       description: 'جناح خاص يوفر أجواء الصالات الأكثر تميزا في رياضة السيارات. مصمم لما يصل إلى 8 ضيوف، مع جهازي محاكاة متطورين، وإعداد راق للترفيه الحصري - حيث تلتقي الخصوصية بالهيبة.',
-      image: '/src/assets/images/vision-vr.png',
+      image: '/assets/images/vision-vr.png',
       type: 'feature'
     },
     {
       id: 5,
       title: 'ديكور 3D',
       description: 'جناح خاص يوفر أجواء الصالات الأكثر تميزا في رياضة السيارات. مصمم لما يصل إلى 8 ضيوف، مع جهازي محاكاة متطورين، وإعداد راق للترفيه الحصري - حيث تلتقي الخصوصية بالهيبة.',
-      image: '/src/assets/images/Requirements.png',
+      image: '/assets/images/Requirements.png',
       type: 'feature'
     },
     {
@@ -53,7 +53,7 @@ export const ServicesPage = () => {
       title: 'الغرف الاستشارية',
       description: 'حدود الدفع مع 20 أو 40 أو 60 دقيقة من السباق. مثالي للأفراد أو المجموعات - بأسعار حصرية لأكثر من 4 سائقين.',
       price: '800 SAR',
-      image: '/src/assets/images/Rectangle 23.png',
+      image: '/assets/images/Rectangle 23.png',
       type: 'booking'
     }
   ];
@@ -252,6 +252,7 @@ export const ServicesPage = () => {
     </div>
   );
 };
+
 
 
 
